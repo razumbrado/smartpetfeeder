@@ -40,7 +40,7 @@ require __DIR__ . '/../includes/layout_top.php';
           <div class="feed-layout__custom">
             <label class="field-label" for="custom-portions-input">Custom portion</label>
             <input type="text" id="custom-portions-input" inputmode="numeric" autocomplete="off"
-                   placeholder="e.g. 5">
+                   placeholder="ex. 7">
             <p class="portion-error" id="custom-portions-error" hidden></p>
             <p class="muted feed-layout__total">
               Total: <strong id="portion-grams-total">1 portion = <?= portions_to_grams(1) ?> g</strong>

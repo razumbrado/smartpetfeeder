@@ -186,7 +186,13 @@
 
     // Returns an error message for the custom field, or '' when valid.
     function validateCustomPortion(raw) {
-      return portionInputError(raw, maxPortions);
+      const v = (raw || '').trim();
+      if (v === '') return 'Please enter a custom portion.';
+      if (!/^\d+$/.test(v)) return 'Use whole numbers only (no letters, symbols, decimals or minus signs).';
+      const p = parseInt(v, 10);
+      if (p < 7) return 'Custom portion must be 7-25.';
+      if (p > maxPortions) return 'Portions cannot be more than ' + maxPortions + '.';
+      return '';
     }
 
     function setCustomError(message) {
